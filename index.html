@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karanja Boniface Mwangi - Web Developer Kenya</title>
+    <meta name="description" content="Professional web developer in Kenya offering website creation, e-commerce development, and SEO services. Contact: +254756194207">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background: #c0392b;
+        }
+        
+        .btn-small {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            background: #1a1a1a;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .code-screen {
+            width: 90%;
+            height: 80%;
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .code-header {
+            background: #2d2d2d;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #3e3e3e;
+        }
+        
+        .code-dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27ca3f; }
+        
+        .code-body {
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            color: #d4d4d4;
+            font-size: 14px;
+            line-height: 1.5;
+            height: calc(100% - 40px);
+            overflow: auto;
+        }
+        
+        .code-line {
+            margin-bottom: 8px;
+            display: flex;
+        }
+        
+        .line-number {
+            color: #6e7681;
+            width: 40px;
+            display: inline-block;
+            text-align: right;
+            margin-right: 15px;
+            user-select: none;
+        }
+        
+        .html-tag { color: #569cd6; }
+        .html-attr { color: #9cdcfe; }
+        .html-value { color: #ce9178; }
+        .css-selector { color: #d7ba7d; }
+        .css-property { color: #9cdcfe; }
+        .css-value { color: #ce9178; }
+        .js-keyword { color: #569cd6; }
+        .js-function { color: #dcdcaa; }
+        .js-string { color: #ce9178; }
+        .comment { color: #6a9955; }
+        
+        .services {
+            background: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-header {
+            padding: 20px;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .service-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .service-body {
+            padding: 30px;
+        }
+        
+        .service-body ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .service-body li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .service-body li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-body li i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+        
+        .price {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .contact-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: """;
+            font-size: 80px;
+            color: var(--secondary);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--secondary) 0%, #2980b9 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .contact-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-details a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: var(--secondary);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about {
+            flex: 2;
+            margin-right: 50px;
+        }
+        
+        .footer-about h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            flex: 1;
+        }
+        
+        .footer-links h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Modal for service contact options */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .modal-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-call {
+            background: #3498db;
+            color: white;
+        }
+        
+        .modal-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        
+        .modal-email {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .modal-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        @media (max-width: 992px) {
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-about {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                margin-top: 20px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns, .cta-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-options {
+                flex-direction: column;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254756194207?text=Hi%20Karanja,%20I%20visited%20your%20website%20and%20I'm%20interested%20in%20your%20services" 
+       class="whatsapp-float" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Service Contact Modal -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modalServiceName">Contact About Service</h3>
+            <p>Choose how you'd like to contact me:</p>
+            <div class="modal-buttons">
+                <a href="tel:+254756579974" class="modal-btn modal-call">
+                    <i class="fas fa-phone"></i> Call Me
+                </a>
+                <a href="https://wa.me/254756194207?text=Hi%20Karanja,%20I'm%20interested%20in%20your%20service" 
+                   class="modal-btn modal-whatsapp" 
+                   target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="mailto:bonnykaranja001@gmail.com?subject=Service Inquiry" 
+                   class="modal-btn modal-email">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">BonnyAce <span>Technologies</span></div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Karanja Boniface Mwangi</h1>
+            <p>Web Creation & Development Specialist</p>
+            <p>Crafting modern, fast, and responsive websites that help Kenyan businesses grow online. Let's build your digital presence today.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn">Get a Free Quote</a>
+                <a href="#services" class="btn btn-accent">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello! I'm Karanja Boniface Mwangi</h3>
+                    <p>A passionate web developer based in Kenya. I specialize in creating custom websites that are not only visually appealing but also functional and user-friendly.</p>
+                    <p>My goal is to understand your business needs and deliver a web solution that drives results and enhances your online visibility. With expertise in modern web technologies, I create websites that perform excellently on all devices.</p>
+                    <p>I believe in building long-term relationships with my clients by providing quality work and excellent customer service.</p>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                </div>
+                <div class="about-image">
+                    <div class="code-screen">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <div class="code-dot dot-red"></div>
+                                <div class="code-dot dot-yellow"></div>
+                                <div class="code-dot dot-green"></div>
+                            </div>
+                        </div>
+                        <div class="code-body">
+                            <div class="code-line"><span class="line-number">1</span><span class="html-tag">&lt;!DOCTYPE html&gt;</span></div>
+                            <div class="code-line"><span class="line-number">2</span><span class="html-tag">&lt;html</span> <span class="html-attr">lang=</span><span class="html-value">"en"</span><span class="html-tag">&gt;</span></div>
+                            <div class="code-line"><span class="line-number">3</span><span class="html-tag">&lt;head&gt;</span></div>
+                            <div class="code-line"><span class="line-number">4</span>  <span class="html-tag">&lt;meta</span> <span class="html-attr">charset=</span><span class="html-value">"UTF-8"</span><span class="html-tag">&gt;</span></div>
+                            <div class="code-line"><span class="line-number">5</span>  <span class="html-tag">&lt;title&gt;</span>Your Business Website<span class="html-tag">&lt;/title&gt;</span></div>
+                            <div class="code-line"><span class="line-number">6</span>  <span class="html-tag">&lt;link</span> <span class="html-attr">rel=</span><span class="html-value">"stylesheet"</span> <span class="html-attr">href=</span><span class="html-value">"style.css"</span><span class="html-tag">&gt;</span></div>
+                            <div class="code-line"><span class="line-number">7</span><span class="html-tag">&lt;/head&gt;</span></div>
+                            <div class="code-line"><span class="line-number">8</span><span class="html-tag">&lt;body&gt;</span></div>
+                            <div class="code-line"><span class="line-number">9</span>  <span class="html-tag">&lt;header&gt;</span></div>
+                            <div class="code-line"><span class="line-number">10</span>    <span class="html-tag">&lt;nav</span> <span class="html-attr">class=</span><span class="html-value">"navbar"</span><span class="html-tag">&gt;</span></div>
+                            <div class="code-line"><span class="line-number">11</span>      <span class="html-tag">&lt;div</span> <span class="html-attr">class=</span><span class="html-value">"logo"</span><span class="html-tag">&gt;</span>Your Brand<span class="html-tag">&lt;/div&gt;</span></div>
+                            <div class="code-line"><span class="line-number">12</span>    <span class="html-tag">&lt;/nav&gt;</span></div>
+                            <div class="code-line"><span class="line-number">13</span>  <span class="html-tag">&lt;/header&gt;</span></div>
+                            <div class="code-line"><span class="line-number">14</span>  <span class="comment">&lt;!-- More code being written... --&gt;</span></div>
+                            <div class="code-line"><span class="line-number">15</span>  <span class="js-keyword">function</span> <span class="js-function">animatePage</span>() {</div>
+                            <div class="code-line"><span class="line-number">16</span>    <span class="js-keyword">const</span> elements = document.<span class="js-function">querySelectorAll</span>(<span class="js-string">'.fade-in'</span>);</div>
+                            <div class="code-line"><span class="line-number">17</span>    elements.<span class="js-function">forEach</span>((el, index) => {</div>
+                            <div class="code-line"><span class="line-number">18</span>      <span class="js-function">setTimeout</span>(() => {</div>
+                            <div class="code-line"><span class="line-number">19</span>        el.<span class="js-property">classList</span>.<span class="js-function">add</span>(<span class="js-string">'visible'</span>);</div>
+                            <div class="code-line"><span class="line-number">20</span>      }, index * 200);</div>
+                            <div class="code-line"><span class="line-number">21</span>    });</div>
+                            <div class="code-line"><span class="line-number">22</span>  }</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Services & Pricing</h2>
+                <p>All prices are in Kenyan Shillings and can be customized based on project specifics.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Basic Business Website</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Ideal for small businesses needing an online presence.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 5 Pages (Home, About, Services, Contact, Blog)</li>
+                            <li><i class="fas fa-check"></i> Responsive Design</li>
+                            <li><i class="fas fa-check"></i> Contact Form</li>
+                            <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                            <li><i class="fas fa-check"></i> 1 Month Free Support</li>
+                        </ul>
+                        <div class="price">KSh 15,000</div>
+                        <div class="contact-options">
+                            <button class="btn btn-accent btn-small contact-service" data-service="Basic Business Website">Get This Service</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Standard Business Website</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Perfect for growing businesses.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Up to 10 Pages</li>
+                            <li><i class="fas fa-check"></i> All Basic Features</li>
+                            <li><i class="fas fa-check"></i> Custom Contact Forms</li>
+                            <li><i class="fas fa-check"></i> Image Gallery</li>
+                            <li><i class="fas fa-check"></i> Social Media Integration</li>
+                            <li><i class="fas fa-check"></i> 3 Months Free Support</li>
+                        </ul>
+                        <div class="price">KSh 25,000</div>
+                        <div class="contact-options">
+                            <button class="btn btn-accent btn-small contact-service" data-service="Standard Business Website">Get This Service</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>E-Commerce Website</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Sell your products online.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Product Listings & Categories</li>
+                            <li><i class="fas fa-check"></i> Shopping Cart & Checkout</li>
+                            <li><i class="fas fa-check"></i> Payment Integration (M-Pesa)</li>
+                            <li><i class="fas fa-check"></i> Order Management System</li>
+                            <li><i class="fas fa-check"></i> Inventory Management</li>
+                            <li><i class="fas fa-check"></i> 6 Months Free Support</li>
+                        </ul>
+                        <div class="price">KSh 45,000</div>
+                        <div class="contact-options">
+                            <button class="btn btn-accent btn-small contact-service" data-service="E-Commerce Website">Get This Service</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Website Redesign</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Modernize your old website.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Modern, Responsive Design</li>
+                            <li><i class="fas fa-check"></i> Improved User Experience</li>
+                            <li><i class="fas fa-check"></i> Content Migration</li>
+                            <li><i class="fas fa-check"></i> SEO Optimization</li>
+                            <li><i class="fas fa-check"></i> Performance Enhancement</li>
+                        </ul>
+                        <div class="price">KSh 12,000 - 35,000</div>
+                        <div class="contact-options">
+                            <button class="btn btn-accent btn-small contact-service" data-service="Website Redesign">Get This Service</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Website Maintenance</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Keep your website running smoothly.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Regular Updates</li>
+                            <li><i class="fas fa-check"></i> Security Monitoring</li>
+                            <li><i class="fas fa-check"></i> Regular Backups</li>
+                            <li><i class="fas fa-check"></i> Technical Support</li>
+                            <li><i class="fas fa-check"></i> Performance Optimization</li>
+                        </ul>
+                        <div class="price">KSh 3,500/month</div>
+                        <div class="contact-options">
+                            <button class="btn btn-accent btn-small contact-service" data-service="Website Maintenance">Get This Service</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>SEO Services</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Improve your Google ranking.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Keyword Research</li>
+                            <li><i class="fas fa-check"></i> On-Page Optimization</li>
+                            <li><i class="fas fa-check"></i> Content Strategy</li>
+                            <li><i class="fas fa-check"></i> Local SEO</li>
+                            <li><i class="fas fa-check"></i> Monthly Performance Reports</li>
+                        </ul>
+                        <div class="price">KSh 5,000/month</div>
+                        <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 10px;">(3-month minimum package)</p>
+                        <div class="contact-options">
+                            <button class="btn btn-accent btn-small contact-service" data-service="SEO Services">Get This Service</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What My Clients Say</h2>
+                <p>Hear from satisfied Kenyan business owners I've worked with</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Karanja built my e-commerce website and integrated M-Pesa payments perfectly. My online sales have increased by 200% since launching the new site. Highly recommended for any Kenyan business!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mwangi</h4>
+                            <p>Fashion Store Owner, Nairobi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I needed a professional website for my consulting business. Karanja delivered exactly what I wanted at an affordable price. The site is fast, mobile-friendly, and has helped me attract new clients."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JO</div>
+                        <div class="author-info">
+                            <h4>James Ochieng</h4>
+                            <p>Business Consultant, Mombasa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "After struggling with my old website for years, Karanja completely redesigned it. The process was smooth, and the results exceeded my expectations. My website now ranks higher on Google too!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">WK</div>
+                        <div class="author-info">
+                            <h4>Wanjiku Kamau</h4>
+                            <p>Restaurant Owner, Nakuru</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Get in touch with me for a free consultation and a personalized quote. Let's discuss how we can bring your ideas to life.</p>
+            <div class="cta-btns">
+                <a href="tel:+254756579974" class="btn"><i class="fas fa-phone"></i> Call Me</a>
+                <a href="https://wa.me/254756194207" class="btn btn-accent" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:bonnykaranja001@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out to me through any of the following methods. I typically respond within a few hours.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone (Calls)</h4>
+                                <a href="tel:+254756579974">+254 756 579974</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/254756194207" target="_blank">+254 756 194207</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:bonnykaranja001@gmail.com">bonnykaranja001@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Karanja Boniface Mwangi</h3>
+                    <p>Web Creation & Development Specialist based in Kenya. Crafting modern, responsive websites that help businesses grow online.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Business Websites</a></li>
+                        <li><a href="#services">E-Commerce</a></li>
+                        <li><a href="#services">Website Redesign</a></li>
+                        <li><a href="#services">SEO</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Karanja Boniface Mwangi. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Animate code typing effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const codeLines = document.querySelectorAll('.code-line');
+            codeLines.forEach((line, index) => {
+                line.style.opacity = '0';
+                setTimeout(() => {
+                    line.style.transition = 'opacity 0.5s ease';
+                    line.style.opacity = '1';
+                }, index * 100);
+            });
+        });
+        
+        // Service Contact Modal
+        const modal = document.getElementById('serviceModal');
+        const closeModal = document.querySelector('.close-modal');
+        const modalServiceName = document.getElementById('modalServiceName');
+        const contactServiceButtons = document.querySelectorAll('.contact-service');
+        
+        // Open modal when service button is clicked
+        contactServiceButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const serviceName = this.getAttribute('data-service');
+                modalServiceName.textContent = `Contact About ${serviceName}`;
+                
+                // Update WhatsApp link with service name
+                const whatsappLink = document.querySelector('.modal-whatsapp');
+                whatsappLink.href = `https://wa.me/254756194207?text=Hi%20Karanja,%20I'm%20interested%20in%20your%20${encodeURIComponent(serviceName)}%20service`;
+                
+                // Update email link with service name
+                const emailLink = document.querySelector('.modal-email');
+                emailLink.href = `mailto:bonnykaranja001@gmail.com?subject=Inquiry%20About%20${encodeURIComponent(serviceName)}`;
+                
+                modal.style.display = 'flex';
+            });
+        });
+        
+        // Close modal when X is clicked
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
